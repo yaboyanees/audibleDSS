@@ -1,0 +1,12 @@
+<%= form_for(@team) do |f| %>
+<div id="teamform">
+<h1>Add Team</h1>
+	<div class="field">
+		<%= f.label :name, 'Team Name' %><br>
+    	<%= f.text_field :name %>
+  	</div>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
+</div>
+<% end %>

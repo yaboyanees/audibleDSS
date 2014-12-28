@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audible</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+	<div id="navi">
+		<ul>
+			<li><%= link_to 'HOME', root_path %></li>
+			<li><%= link_to 'TEAMS', teams_path %></li>
+			<li><%= link_to 'O-PLAYS', o_plays_path %></li>
+			<li><%= link_to 'D-PLAYS', d_plays_path %></li>
+			<li><%= link_to 'O-PLAYBOOK', team_has_os_path %></li>
+			<li><%= link_to 'D-PLAYBOOK', team_has_ds_path %></li>
+			<li><%= link_to 'GAME STATS', games_path %></li>
+		</ul>
+	</div>
+	
+</body>
+</html>

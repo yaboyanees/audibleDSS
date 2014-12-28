@@ -1,0 +1,33 @@
+<h1>Listing o_plays</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>Formation</th>
+      <th>Play type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @o_plays.each do |o_play| %>
+      <tr>
+        <td><%= o_play.name %></td>
+        <td><%= o_play.picture %></td>
+        <td><%= o_play.formation %></td>
+        <td><%= o_play.play_type %></td>
+        <td><%= link_to 'Show', o_play %></td>
+        <td><%= link_to 'Edit', edit_o_play_path(o_play) %></td>
+        <td><%= link_to 'Destroy', o_play, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New O play', new_o_play_path %>

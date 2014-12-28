@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teamHasO_id: 1
+  teamHasD_id: 1
+  qtr: 1
+  clock: 2014-12-20 21:12:02
+  down: 1
+  yds_togo: 1
+  side: MyString
+  yd_line: 1
+  ball_pos: MyString
+  pass_dist: MyString
+  pass_dir: MyString
+  run_type: MyString
+  run_loc: MyString
+  run_dir: MyString
+  result: 1
+  score_diff: 1
+
+two:
+  teamHasO_id: 1
+  teamHasD_id: 1
+  qtr: 1
+  clock: 2014-12-20 21:12:02
+  down: 1
+  yds_togo: 1
+  side: MyString
+  yd_line: 1
+  ball_pos: MyString
+  pass_dist: MyString
+  pass_dir: MyString
+  run_type: MyString
+  run_loc: MyString
+  run_dir: MyString
+  result: 1
+  score_diff: 1

@@ -1,0 +1,2 @@
+module TeamHasOsHelper
+end

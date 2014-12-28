@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @d_play.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @d_play.picture %>
+</p>
+
+<p>
+  <strong>Formation:</strong>
+  <%= @d_play.formation %>
+</p>
+
+<p>
+  <strong>Play type:</strong>
+  <%= @d_play.play_type %>
+</p>
+
+<%= link_to 'Edit', edit_d_play_path(@d_play) %> |
+<%= link_to 'Back', d_plays_path %>

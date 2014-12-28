@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @o_play.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @o_play.picture %>
+</p>
+
+<p>
+  <strong>Formation:</strong>
+  <%= @o_play.formation %>
+</p>
+
+<p>
+  <strong>Play type:</strong>
+  <%= @o_play.play_type %>
+</p>
+
+<%= link_to 'Edit', edit_o_play_path(@o_play) %> |
+<%= link_to 'Back', o_plays_path %>

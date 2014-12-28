@@ -1,0 +1,29 @@
+<h1>Listing team_has_os</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Oplay</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_has_os.each do |team_has_o| %>
+      <tr>
+        <td><%= team_has_o.team_id %></td>
+        <td><%= team_has_o.oPlay_id %></td>
+        <td><%= link_to 'Show', team_has_o %></td>
+        <td><%= link_to 'Edit', edit_team_has_o_path(team_has_o) %></td>
+        <td><%= link_to 'Destroy', team_has_o, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team has o', new_team_has_o_path %>

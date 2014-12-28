@@ -1,0 +1,74 @@
+// Place all the styles related to the teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#backdrop{
+	background-color: #212424;  
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	#teamlist{ 
+		width: 49.75%;
+		height: 100%;
+		float: right;
+		background-color: #299bc7;
+		h1 {
+			margin: 0;
+			padding: 5px 0 0 0;
+			text-align: center;
+			color:#ffffff;
+			font-family:helvetica, sans-serif;
+			font-size: 36px;
+			background-color: #212424;
+		}
+		#title{	
+			margin: 0;
+			padding: 10px 20px 0 20px;
+			font-size: 30px;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		.teamiterate{
+			margin: 10px 20px 10px 20px;
+			padding: 10px 10px 10px 10px;	
+			font-size: 30px;
+			border: 1px solid grey;
+			background-color: white;
+			span{
+				font-size: 30px;
+				float: right;
+			}
+		}
+	}
+	#teamform{
+		width: 49.75%;
+		height: 100%;
+		float: left;
+		background-color: #299bc7;
+		h1 {
+			margin: 0;
+			padding: 5px 0 0 0;
+			font-size: 36px;
+			text-align: center;
+			color:#ffffff;
+			font-family:helvetica, sans-serif;	
+			background-color: #212424;
+		}
+		.field{
+			font-size: 30px;
+			margin: 0;
+			padding: 10px 0 0 20px;
+		}
+		.actions{
+				padding: 10px 0 800px 20px;
+		}
+		label{
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		input{
+			font-size: 30px;
+			padding-top: 10px;
+		}
+	}
+}
