@@ -1,81 +1,117 @@
 <%= form_for(@game) do |f| %>
-  <% if @game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-      <ul>
-      <% @game.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :teamHasO_id %><br>
-    <%= f.number_field :teamHasO_id %>
-  </div>
-  <div class="field">
-    <%= f.label :teamHasD_id %><br>
-    <%= f.number_field :teamHasD_id %>
-  </div>
-  <div class="field">
-    <%= f.label :qtr %><br>
-    <%= f.number_field :qtr %>
-  </div>
-  <div class="field">
-    <%= f.label :clock %><br>
-    <%= f.time_select :clock %>
-  </div>
-  <div class="field">
-    <%= f.label :down %><br>
-    <%= f.number_field :down %>
-  </div>
-  <div class="field">
-    <%= f.label :yds_togo %><br>
-    <%= f.number_field :yds_togo %>
-  </div>
-  <div class="field">
-    <%= f.label :side %><br>
-    <%= f.text_field :side %>
-  </div>
-  <div class="field">
-    <%= f.label :yd_line %><br>
-    <%= f.number_field :yd_line %>
-  </div>
-  <div class="field">
-    <%= f.label :ball_pos %><br>
-    <%= f.text_field :ball_pos %>
-  </div>
-  <div class="field">
-    <%= f.label :pass_dist %><br>
-    <%= f.text_field :pass_dist %>
-  </div>
-  <div class="field">
-    <%= f.label :pass_dir %><br>
-    <%= f.text_field :pass_dir %>
-  </div>
-  <div class="field">
-    <%= f.label :run_type %><br>
-    <%= f.text_field :run_type %>
-  </div>
-  <div class="field">
-    <%= f.label :run_loc %><br>
-    <%= f.text_field :run_loc %>
-  </div>
-  <div class="field">
-    <%= f.label :run_dir %><br>
-    <%= f.text_field :run_dir %>
-  </div>
-  <div class="field">
-    <%= f.label :result %><br>
-    <%= f.number_field :result %>
-  </div>
-  <div class="field">
-    <%= f.label :score_diff %><br>
-    <%= f.number_field :score_diff %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<h1>Add Game Play</h1>
+  	<div class="field">
+    	<%= f.label "Select Offense + Play" %><br />
+		<%= f.collection_select :teamHasO_id, TeamHasO.all, :id, :oTeamAndPlay, :prompt => 'Select O' %>
+  	</div>
+  	<div class="field">
+    	<%= f.label "Select Defense + Play" %><br />
+		<%= f.collection_select :teamHasD_id, TeamHasD.all, :id, :dTeamAndPlay, :prompt => 'Select D' %>
+  	</div>
+  	<div class="field">
+		<%= radio_button_tag(:qtr, 1) %>
+		<%= label_tag(:qtr, "1st Quarter") %>
+		<%= radio_button_tag(:qtr, 2) %>
+		<%= label_tag(:qtr, "2nd Quarter") %>
+		<%= radio_button_tag(:qtr, 3) %>
+		<%= label_tag(:qtr, "3rd Quarter") %>
+		<%= radio_button_tag(:qtr, 4) %>
+		<%= label_tag(:qtr, "4th Quarter") %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :clock %><br>
+    	<%= f.time_select :clock, :start_hour => 0, :end_hour => 15 %>
+ 	</div>
+  	<div class="field">
+		<%= radio_button_tag(:down, 1) %>
+		<%= label_tag(:down, "1st Down") %>
+		<%= radio_button_tag(:down, 2) %>
+		<%= label_tag(:down, "2nd Down") %>
+		<%= radio_button_tag(:down, 3) %>
+		<%= label_tag(:down, "3rd Down") %>
+		<%= radio_button_tag(:down, 4) %>
+		<%= label_tag(:down, "4th Down") %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :yds_togo %><br>
+    	<%= f.number_field :yds_togo %>
+  	</div>
+  	<div class="field">
+		<%= radio_button_tag(:side, "Out") %>
+		<%= label_tag(:side, "Out") %>
+		<%= radio_button_tag(:side, "In") %>
+		<%= label_tag(:side, "In") %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :yd_line %><br>
+    	<%= f.number_field :yd_line %>
+  	</div>
+  	<div class="field">
+		<%= radio_button_tag(:ball_pos, "Left Hash") %>
+		<%= label_tag(:ball_pos, "Left Hash") %>
+		<%= radio_button_tag(:ball_pos, "Middle") %>
+		<%= label_tag(:ball_pos, "Middle") %>
+		<%= radio_button_tag(:ball_pos, "Right Hash") %>
+		<%= label_tag(:ball_pos, "Right Hash") %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :pass_dist %><br>
+		<%= radio_button_tag(:pass_dist, "Short") %>
+		<%= label_tag(:pass_dist, "Short") %>
+		<%= radio_button_tag(:pass_dist, "Medium") %>
+		<%= label_tag(:pass_dist, "Medium") %>
+		<%= radio_button_tag(:pass_dist, "Long") %>
+		<%= label_tag(:pass_dist, "Long") %>    	
+  	</div>
+  	<div class="field">
+    	<%= f.label :pass_dir %><br>
+		<%= radio_button_tag(:pass_dir, "Left") %>
+		<%= label_tag(:pass_dir, "Left") %>
+		<%= radio_button_tag(:pass_dir, "Middle") %>
+		<%= label_tag(:pass_dir, "Middle") %>
+		<%= radio_button_tag(:pass_dir, "Right") %>
+		<%= label_tag(:pass_dir, "Right") %> 
+  	</div>
+  	<div class="field">
+		<%= radio_button_tag(:run_type, "Handoff") %>
+		<%= label_tag(:run_type, "Handoff") %> 
+		<%= radio_button_tag(:run_type, "Pitch") %>
+		<%= label_tag(:run_type, "Pitch") %>
+    	<%= f.label :run_type %><br>
+		<%= radio_button_tag(:run_type, "Sweep") %>
+		<%= label_tag(:run_type, "Sweep") %>
+		<%= radio_button_tag(:run_type, "Draw") %>
+		<%= label_tag(:run_type, "Draw") %>
+		<%= radio_button_tag(:run_type, "Reverse") %>
+		<%= label_tag(:run_type, "Reverse") %> 
+ 	</div>
+  	<div class="field">
+    	<%= f.label :run_loc %><br>
+		<%= radio_button_tag(:run_loc, "Inside") %>
+		<%= label_tag(:run_loc, "Inside") %>
+		<%= radio_button_tag(:run_loc, "Tackle") %>
+		<%= label_tag(:run_loc, "Tackle") %>
+		<%= radio_button_tag(:run_loc, "Outside") %>
+		<%= label_tag(:run_loc, "Outside") %> 
+  	</div>
+  	<div class="field">
+    	<%= f.label :run_dir %><br>
+		<%= radio_button_tag(:run_dir, "Left") %>
+		<%= label_tag(:run_dir, "Left") %>
+		<%= radio_button_tag(:run_dir, "Middle") %>
+		<%= label_tag(:run_dir, "Middle") %>
+		<%= radio_button_tag(:run_dir, "Right") %>
+		<%= label_tag(:run_dir, "Right") %> 
+  	</div>
+  	<div class="field">
+    	<%= f.label :result %><br>
+    	<%= f.number_field :result %>
+  	</div>
+  	<div class="field">
+    	<%= f.label :score_diff %><br>
+    	<%= f.number_field :score_diff %>
+  	</div>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
 <% end %>

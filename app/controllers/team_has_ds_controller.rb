@@ -5,6 +5,7 @@ class TeamHasDsController < ApplicationController
   # GET /team_has_ds.json
   def index
     @team_has_ds = TeamHasD.all
+    @team_has_d = TeamHasD.new
   end
 
   # GET /team_has_ds/1

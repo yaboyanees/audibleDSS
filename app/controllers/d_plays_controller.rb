@@ -5,6 +5,7 @@ class DPlaysController < ApplicationController
   # GET /d_plays.json
   def index
     @d_plays = DPlay.all
+    @d_play = DPlay.new
   end
 
   # GET /d_plays/1

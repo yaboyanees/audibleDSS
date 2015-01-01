@@ -1,57 +1,37 @@
-<h1>Listing games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Teamhaso</th>
-      <th>Teamhasd</th>
-      <th>Qtr</th>
-      <th>Clock</th>
-      <th>Down</th>
-      <th>Yds togo</th>
-      <th>Side</th>
-      <th>Yd line</th>
-      <th>Ball pos</th>
-      <th>Pass dist</th>
-      <th>Pass dir</th>
-      <th>Run type</th>
-      <th>Run loc</th>
-      <th>Run dir</th>
-      <th>Result</th>
-      <th>Score diff</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Game Rollup</h1>
+      Teamhaso
+      Teamhasd
+      Qtr
+      Clock
+      Down
+      Yds togo
+      Side
+      Yd line
+      Ball pos
+      Pass dist
+      Pass dir
+      Run type
+      Run loc
+      Run dir
+      Result
+      Score diff
     <% @games.each do |game| %>
-      <tr>
-        <td><%= game.teamHasO_id %></td>
-        <td><%= game.teamHasD_id %></td>
-        <td><%= game.qtr %></td>
-        <td><%= game.clock %></td>
-        <td><%= game.down %></td>
-        <td><%= game.yds_togo %></td>
-        <td><%= game.side %></td>
-        <td><%= game.yd_line %></td>
-        <td><%= game.ball_pos %></td>
-        <td><%= game.pass_dist %></td>
-        <td><%= game.pass_dir %></td>
-        <td><%= game.run_type %></td>
-        <td><%= game.run_loc %></td>
-        <td><%= game.run_dir %></td>
-        <td><%= game.result %></td>
-        <td><%= game.score_diff %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= game.teamHasO_id %>
+        <%= game.teamHasD_id %>
+        <%= game.qtr %>
+        <%= game.clock %>
+        <%= game.down %>
+        <%= game.yds_togo %>
+        <%= game.side %>
+        <%= game.yd_line %>
+        <%= game.ball_pos %>
+        <%= game.pass_dist %>
+        <%= game.pass_dir %>
+        <%= game.run_type %>
+        <%= game.run_loc %>
+        <%= game.run_dir %>
+        <%= game.result %>
+        <%= game.score_diff %>
+        <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>
+<%= render 'form' %>

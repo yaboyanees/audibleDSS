@@ -1,25 +1,14 @@
 <%= form_for(@team_has_o) do |f| %>
-  <% if @team_has_o.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team_has_o.errors.count, "error") %> prohibited this team_has_o from being saved:</h2>
-
-      <ul>
-      <% @team_has_o.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :team_id %><br>
-    <%= f.number_field :team_id %>
-  </div>
-  <div class="field">
-    <%= f.label :oPlay_id %><br>
-    <%= f.number_field :oPlay_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<h1>Add Team O-Play</h1>
+	<div class="field">
+    	<%= f.label "Team Name" %><br />
+		<%= f.collection_select :team_id, Team.all, :id, :tname, :prompt => 'Select A Team' %>
+  	</div>
+  	<div class="field">
+    	<%= f.label "Select Play" %><br />
+		<%= f.collection_select :oPlay_id, OPlay.all, :id, :oplayname, :prompt => 'Select A Play' %>
+  	</div>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
 <% end %>

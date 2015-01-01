@@ -1,33 +1,17 @@
-<h1>Listing d_plays</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Picture</th>
-      <th>Formation</th>
-      <th>Play type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @d_plays.each do |d_play| %>
-      <tr>
-        <td><%= d_play.name %></td>
-        <td><%= d_play.picture %></td>
-        <td><%= d_play.formation %></td>
-        <td><%= d_play.play_type %></td>
-        <td><%= link_to 'Show', d_play %></td>
-        <td><%= link_to 'Edit', edit_d_play_path(d_play) %></td>
-        <td><%= link_to 'Destroy', d_play, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New D play', new_d_play_path %>
+<div id="d-backdrop">
+	<div id="d-list">
+		<h1>Defensive Plays</h1>
+			<% @d_plays.each do |d_play| %>
+			<p class="d-playiterate">
+				<%= d_play.formation %>
+    			<%= d_play.name %>
+    			<%= d_play.picture %>	
+    			<%= d_play.play_type %>
+    			<span>
+    				<%= link_to 'Destroy', d_play, method: :delete, data: { confirm: 'Are you sure?' } %>
+    			</span>
+    		</p>
+    		<% end %>
+	</div>
+	<%= render 'form' %>
+</div>

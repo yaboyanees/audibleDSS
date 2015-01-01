@@ -5,6 +5,7 @@ class OPlaysController < ApplicationController
   # GET /o_plays.json
   def index
     @o_plays = OPlay.all
+    @o_play = OPlay.new
   end
 
   # GET /o_plays/1

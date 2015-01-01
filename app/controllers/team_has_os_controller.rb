@@ -5,6 +5,7 @@ class TeamHasOsController < ApplicationController
   # GET /team_has_os.json
   def index
     @team_has_os = TeamHasO.all
+    @team_has_o = TeamHasO.new
   end
 
   # GET /team_has_os/1
