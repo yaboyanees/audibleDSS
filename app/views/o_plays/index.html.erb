@@ -1,17 +1,8 @@
 <div id="o-backdrop">
 	<div id="o-list">
-		<h1>Offensive Plays</h1>
-			<% @o_plays.each do |o_play| %>
-			<p class="o-playiterate">
-				<%= o_play.formation %>
-    			<%= o_play.name %>
-    			<%= o_play.picture %>	
-    			<%= o_play.play_type %>
-    			<span>
-    				<%= link_to 'Destroy', o_play, method: :delete, data: { confirm: 'Are you sure?' } %>
-    			</span>
-    		</p>
-    		<% end %>
+		<% @o_plays.each do |o_play| %>
+			<p class="imageplay"><%= image_tag o_play.picture %></p>
+		<% end %>
 	</div>
 	<%= render 'form' %>
 </div>

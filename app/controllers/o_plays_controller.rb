@@ -29,7 +29,7 @@ class OPlaysController < ApplicationController
 
     respond_to do |format|
       if @o_play.save
-        format.html { redirect_to @o_play, notice: 'O play was successfully created.' }
+        format.html { redirect_to o_plays_url, notice: 'O play was successfully created.' }
         format.json { render action: 'show', status: :created, location: @o_play }
       else
         format.html { render action: 'new' }
