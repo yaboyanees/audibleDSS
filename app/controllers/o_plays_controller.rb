@@ -6,6 +6,7 @@ class OPlaysController < ApplicationController
   def index
     @o_plays = OPlay.all
     @o_play = OPlay.new
+  	@o_formations = OPlay.all
   end
 
   # GET /o_plays/1

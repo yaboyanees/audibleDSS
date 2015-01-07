@@ -1,7 +1,17 @@
 <div id="o-backdrop">
 	<div id="o-list">
-		<% @o_plays.each do |o_play| %>
-			<p class="imageplay"><%= image_tag o_play.picture %></p>
+		<% @o_formations.each do |o_formation| %>
+			<h2><%= o_formation.formation %></h2>
+			<% @o_plays.each do |o_play| %>
+			<% if o_formation.formation == o_play.formation %>
+				<div id="indy-o">
+					<p class="playname"><%= o_play.name %></p>
+					<p class="imageplay"><%= image_tag o_play.picture %></p>
+					<p class="playtype"><%= o_play.play_type %></p>
+				</div>
+			<% else %>
+			<% end %>
+			<% end %>
 		<% end %>
 	</div>
 	<%= render 'form' %>
